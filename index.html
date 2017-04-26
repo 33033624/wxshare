@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="screen-orientation" content="portrait" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="full-screen" content="yes">
+  <meta name="x5-fullscreen" content="true">
+  <title>wx share</title>
+</head>
+
+<body>
+  <div id="app">
+    分享的页面
+  </div>
+</body>
+
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js'></script>
+<script>
+  $.ajax({
+    type: "get",
+    url: "https://xxxxxx", //替换网址，xxx根据自己jssdk文件位置修改
+    dataType: "jsonp",
+    jsonp: "callback",
+    jsonpCallback: "success_jsonpCallback",
+    success: function(data) {
+      wx.config({
+        appId: data.respData.appId,
+        timestamp: data.respData.timestamp,
+        nonceStr: data.respData.nonceStr,
+        signature: data.respData.signature,
+        jsApiList: [
+          "onMenuShareTimeline", //分享给朋友圈
+          "onMenuShareAppMessage" //分享到朋友
+        ]
+      });
+    },
+    error: function(data) {
+      alert("连接失败！");
+    }
+  });
+
+  wx.ready(function() {
+    var shareData = {
+      title: '分享的标题',
+      desc: '分享的描述',
+      link: '链接',
+      imgUrl: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1539304729,4101585273&fm=58&s=2EC7DC16CD44CF13547DBDF403004035&bpow=121&bpoh=75',
+      link: window.location.href
+    };
+    wx.onMenuShareAppMessage(shareData);
+    wx.onMenuShareTimeline(shareData);
+  });
+</script>
