@@ -9,8 +9,24 @@
 
    - a、获取订单详情
    
-   getOrderDetail
-   接口的调取demo: 
+   getOrderDetail接口调取事例: 
    
    ``jsonp(apiUrl.getOrderDetail, {oid,type,exchange}, null, (err, json) =>{})``
+   - a、获取订单详情
+   
+   getOrderDetail接口调取事例: 
+   
+   ``jsonp(apiUrl.getOrderDetail, {oid,type,exchange}, null, (err, json) =>{})``
+   
+   - b、发货
+   
+   sendGood接口调取事例: 
+   
+   ``jsonp(apiUrl.sendGood, {oid,expresscode,exprescompany}, null, (err, json) => {})``
+   
+   - c、拒绝
+   
+   rejectSale接口调取事例: 
+   
+   ``jsonp(apiUrl.rejectSale, {oid,num}, null, (err, json) =>{})``
    
