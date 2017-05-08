@@ -10,6 +10,6 @@
    - a、获取订单详情
    
    getOrderDetail
-   
+   接口的调取demo: jsonp(apiUrl.getOrderDetail, {oid,type,exchange}, null, (err, json) =>{})
    
 ``
