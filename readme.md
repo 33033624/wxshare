@@ -1,6 +1,6 @@
 
 # 快卖专区 order-detail
-``
+
 ## 1、 访问
 
    //m.zhuanzhuan.58.com/order/newdetail.htm?oid=${item.orderid}&type=${item.type}&exchange=${item.isExchange}
@@ -12,4 +12,3 @@
    getOrderDetail
    接口的调取demo: jsonp(apiUrl.getOrderDetail, {oid,type,exchange}, null, (err, json) =>{})
    
-``
