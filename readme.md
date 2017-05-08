@@ -13,7 +13,7 @@
    
    ``jsonp(apiUrl.getOrderDetail, {oid,type,exchange}, null, (err, json) =>{})``
    - b、发货
-   
+   
    sendGood接口调取事例: 
    
    ``jsonp(apiUrl.sendGood, {oid,expresscode,exprescompany}, null, (err, json) => {})``
